@@ -1,0 +1,22 @@
+{
+  "name": "nature-vision-mcp",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "nature-vision-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.1",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.8",
+    "typescript": "^5.9.3"
+  }
+}
