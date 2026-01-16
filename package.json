@@ -1,7 +1,9 @@
 {
   "name": "nature-vision-mcp",
   "version": "0.1.0",
+  "description": "An MCP (Model Context Protocol) server that identifies biological species from images, returning Latin names with confidence scores.",
   "type": "module",
+  "main": "dist/index.js",
   "bin": {
     "nature-vision-mcp": "./dist/index.js"
   },
@@ -9,14 +11,27 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "nature-vision",
+    "ai-tools"
+  ],
+  "author": "fonky.chen@gmail.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fonkychen/nature-vision-mcp.git"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.25.1",
+    "@modelcontextprotocol/sdk": "^1.0.1",
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
-    "@types/node": "^25.0.8",
-    "typescript": "^5.9.3"
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
   }
 }
