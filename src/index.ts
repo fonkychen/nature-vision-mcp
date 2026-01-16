@@ -9,7 +9,7 @@ const API_ENDPOINT = "https://api.nature-vision.top/api/v1/mcp/vision";
 const API_KEY = process.env.NATURE_VISION_API_KEY;
 if (!API_KEY) {
   console.error("NATURE_VISION_API_KEY environment variable is not set");
-  // process.exit(1);
+  process.exit(1);
 }
 
 interface IdentifySpeciesArgs {

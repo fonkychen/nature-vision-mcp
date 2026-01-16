@@ -91,6 +91,11 @@ npm install
 
 ```
 
+For now, you can use token: app-dummy-token-2026, this will allow you request once per minute. 
+```
+"NATURE_VISION_API_KEY": "app-dummy-token-2026"
+```
+
 
 
 ```bash
