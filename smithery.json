@@ -1,0 +1,19 @@
+{
+  "name": "nature-vision-mcp",
+  "version": "0.1.3",
+  "description": "Identify species (plants, birds, etc.) using AI-powered nature vision.",
+  "env": {
+    "NATURE_VISION_API_KEY": {
+      "description": "Your API Key from nature-vision.top",
+      "required": true
+    }
+  },
+  "capabilities": {
+    "tools": [
+      {
+        "name": "identify_species",
+        "description": "Identify species from an image and return Latin names with confidence"
+      }
+    ]
+  }
+}

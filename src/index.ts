@@ -7,10 +7,10 @@ import fetch from "node-fetch";
 
 const API_ENDPOINT = "https://api.nature-vision.top/api/v1/mcp/vision";
 const API_KEY = process.env.NATURE_VISION_API_KEY;
-if (!API_KEY) {
-  console.error("NATURE_VISION_API_KEY environment variable is not set");
-  process.exit(1);
-}
+// if (!API_KEY) {
+//   console.error("NATURE_VISION_API_KEY environment variable is not set");
+//   process.exit(1);
+// }
 
 interface IdentifySpeciesArgs {
   image_url?: string;
@@ -29,7 +29,7 @@ interface VisionApiResponse {
 
 const server = new McpServer({
   name: "nature-vision-mcp",
-  version: "0.1.0",
+  version: "0.1.3",
 });
 
 
@@ -64,6 +64,12 @@ server.registerTool(
     try {
       if (image_url && image_data) {
         throw new Error("Either image_url or image_data is required");
+      }
+      if (!API_KEY) {
+        return {
+          content: [{ type: "text", text: "Error: NATURE_VISION_API_KEY is not configured on the server." }],
+          isError: true
+        };
       }
 
       const resp = await fetch(API_ENDPOINT, {
